@@ -32,7 +32,7 @@ public class UserRegistration extends TestBase {
     public void i_entered_the_user_data() {
 
         registrationPage = new UserRegisterationPage(driver);
-        registrationPage.registerForm("salma", "elsayed" , "salma@gmail.com", "123456");
+        registrationPage.registerForm("salma", "elsayed" , "salma123@gmail.com", "123456");
     }
 
     @Then("^The registration page displayed successfully$")

@@ -35,7 +35,7 @@ public class TestRegistration extends TestBase{
         homePage.openRegisterLink();
         registerationPage = new UserRegisterationPage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        registerationPage.registerForm("Radwa" , "Elsayed", "radwa1010@gmail.com" , "salma22");
+        registerationPage.registerForm("Radwa" , "Elsayed", "radwa101099@gmail.com" , "salma22");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         WebElement registerMsg = driver.findElement(By.cssSelector("div.result"));
         Assert.assertEquals(registerMsg.getText() , "Your registration completed");
@@ -59,7 +59,7 @@ public class TestRegistration extends TestBase{
         homePage.openLoginLink();
         loginPage = new UserLoginPage(driver);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        loginPage.loginForm("radwa1010@gmail.com" , "radwa22");
+        loginPage.loginForm("radwa101099@gmail.com" , "radwa22");
     }
 
 
