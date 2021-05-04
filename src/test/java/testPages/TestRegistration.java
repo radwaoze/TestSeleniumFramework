@@ -35,7 +35,7 @@ public class TestRegistration extends TestBase{
         homePage.openRegisterLink();
         registerationPage = new UserRegisterationPage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        registerationPage.registerForm("Radwa" , "Elsayed", "radwa101999@gmail.com" , "salma22");
+        registerationPage.registerForm("Radwa" , "Elsayed", "radwa10188@gmail.com" , "salma22");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         WebElement registerMsg = driver.findElement(By.cssSelector("div.result"));
         Assert.assertEquals(registerMsg.getText() , "Your registration completed");
@@ -52,7 +52,7 @@ public class TestRegistration extends TestBase{
         homePage.userLogoutLink();
     }
 
-    @Test(dependsOnMethods = "TestLogout")
+    /*@Test(dependsOnMethods = "TestLogout")
     public void TestLogin() throws InterruptedException {
 
         System.out.println("URL 3 : " + driver.getCurrentUrl());
@@ -60,7 +60,7 @@ public class TestRegistration extends TestBase{
         loginPage = new UserLoginPage(driver);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         loginPage.loginForm("radwa101999@gmail.com" , "radwa22");
-    }
+    }*/
 
 
 }

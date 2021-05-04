@@ -4,12 +4,13 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pages.HomePage;
 import pages.UserRegisterationPage;
 import testPages.TestBase;
+
+import java.util.concurrent.TimeUnit;
 
 public class UserRegistration extends TestBase {
     pages.HomePage homePage ;
@@ -32,11 +33,12 @@ public class UserRegistration extends TestBase {
     public void i_entered_the_user_data() {
 
         registrationPage = new UserRegisterationPage(driver);
-        registrationPage.registerForm("salma", "elsayed" , "salma1235@gmail.com", "123456");
+        registrationPage.registerForm("Salma", "Elsayed" , "salma142002@gmail.com", "123456");
     }
 
     @Then("^The registration page displayed successfully$")
     public void the_registration_page_displayed_successfully()  {
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         WebElement registerMsg = driver.findElement(By.cssSelector("div.result"));
         Assert.assertEquals(registerMsg.getText() , "Your registration completed");
 
