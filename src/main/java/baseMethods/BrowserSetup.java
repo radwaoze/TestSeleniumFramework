@@ -17,25 +17,25 @@ public class BrowserSetup {
 
     public WebDriver BrowserName(String browser)
     {
-        if(browser.equals("Chrome"))
+        if(browser.equalsIgnoreCase("Chrome"))
         {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             return driver;
         }
-        else if(browser.equals("Firefox"))
+        else if(browser.equalsIgnoreCase("Firefox"))
         {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
             return driver;
         }
-        else if(browser.equals("Edge"))
+        else if(browser.equalsIgnoreCase("Edge"))
         {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
             return driver;
         }
-        else if(browser.equals("Headless"))
+        else if(browser.equalsIgnoreCase("Headless"))
         {
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setJavascriptEnabled(true);
@@ -46,7 +46,7 @@ public class BrowserSetup {
             driver = new PhantomJSDriver(caps);
             return driver;
         }
-        else if(browser.equals("Chrome-Headless"))
+        else if(browser.equalsIgnoreCase("Chrome-Headless"))
         {
             WebDriverManager.chromedriver().setup();
 
