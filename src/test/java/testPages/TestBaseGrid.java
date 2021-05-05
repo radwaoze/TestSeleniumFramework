@@ -21,11 +21,12 @@ public class TestBaseGrid {
 
     @BeforeClass
     @Parameters(value = {"browser"})
-    public void setUp(@Optional("Chrome") String browser) throws MalformedURLException {
+    public void setUp(@Optional("chrome") String browser) throws MalformedURLException {
         driver = new ThreadLocal<>();
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browserName" , browser);
-        driver.set(new RemoteWebDriver (new URL("http://localhost:4545/wd/hub"),caps));
+        //caps.setCapability("browserName" , browser);
+        caps.setBrowserName(browser);
+        driver.set(new RemoteWebDriver (new URL("http://localhost:4444/wd/hub"),caps));
         getDriver().navigate().to(BaseUrl);
     }
 
