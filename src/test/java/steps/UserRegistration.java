@@ -1,5 +1,6 @@
 package steps;
 
+import com.github.javafaker.Faker;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,6 +18,13 @@ public class UserRegistration extends TestBase {
     pages.UserRegisterationPage registrationPage;
 
 
+    Faker fakeData = new Faker();
+    String fName = fakeData.name().firstName();
+    String lName = fakeData.name().lastName();
+    String userEmail = fakeData.internet().emailAddress();
+    //String pass = fakeData.phoneNumber().toString();
+    String pass = "radwa123";
+
     @Given("^the user in the home page$")
     public void the_user_in_the_home_page() {
         homePage = new HomePage(driver);
@@ -33,7 +41,8 @@ public class UserRegistration extends TestBase {
     public void i_entered_the_user_data() {
 
         registrationPage = new UserRegisterationPage(driver);
-        registrationPage.registerForm("Salma", "Elsayed" , "salma142002@gmail.com", "123456");
+        registrationPage.registerForm(fName , lName , userEmail , pass);
+        System.out.println("Cucumber User Data : " + fName + " " + lName + " " + userEmail + " " + pass);
     }
 
     @Then("^The registration page displayed successfully$")

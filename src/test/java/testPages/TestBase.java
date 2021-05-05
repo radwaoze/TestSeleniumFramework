@@ -24,8 +24,8 @@ public class TestBase extends AbstractTestNGCucumberTests {
     //@Parameters("browser")
     //String browserName
     @BeforeSuite
-    @Parameters({"browser"})
-    public void setup(@Optional("chrome")String browserName) {
+    @Parameters({"browserName"})
+    public void setup(@Optional("Chrome")String browserName) {
 
         BrowserSetup = new BrowserSetup();
         driver = BrowserSetup.BrowserName(browserName);
@@ -34,7 +34,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
         method.navigateToAnyPage("https://demo.nopcommerce.com/");
     }
     @AfterMethod
-    public void afterMethod(ITestResult result) throws IOException {
+    public void screenshotOnFailure(ITestResult result) throws IOException {
         if(ITestResult.FAILURE == result.getStatus())
         {
             TakesScreenshot ts = (TakesScreenshot) driver;

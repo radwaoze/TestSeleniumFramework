@@ -4,7 +4,7 @@
 <suite name="regression">
 
     <test name="onChrome">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browserName" value="Chrome"/>
         <classes>
             <class name="testPages.TestRegistration"/>
         </classes>

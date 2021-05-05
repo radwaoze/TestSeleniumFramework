@@ -19,13 +19,15 @@ public class BrowserSetup {
     {
         if(browser.equalsIgnoreCase("Chrome"))
         {
-            WebDriverManager.chromedriver().setup();
+           // WebDriverManager.chromedriver().setup();
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");
             driver = new ChromeDriver();
             return driver;
         }
         else if(browser.equalsIgnoreCase("Firefox"))
         {
-            WebDriverManager.firefoxdriver().setup();
+            //WebDriverManager.firefoxdriver().setup();
+            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/drivers/geckodriver.exe");
             driver = new FirefoxDriver();
             return driver;
         }

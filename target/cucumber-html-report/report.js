@@ -38,28 +38,28 @@ formatter.match({
   "location": "UserRegistration.the_user_in_the_home_page()"
 });
 formatter.result({
-  "duration": 1770251600,
+  "duration": 2272208700,
   "status": "passed"
 });
 formatter.match({
   "location": "UserRegistration.i_click_on_register_button()"
 });
 formatter.result({
-  "duration": 15109300,
+  "duration": 13176100,
   "status": "passed"
 });
 formatter.match({
   "location": "UserRegistration.i_entered_the_user_data()"
 });
 formatter.result({
-  "duration": 3908607900,
+  "duration": 3437536800,
   "status": "passed"
 });
 formatter.match({
   "location": "UserRegistration.the_registration_page_displayed_successfully()"
 });
 formatter.result({
-  "duration": 55527100,
+  "duration": 140461800,
   "status": "passed"
 });
 });
